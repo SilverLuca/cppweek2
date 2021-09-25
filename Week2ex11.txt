@@ -1,0 +1,29 @@
+The else will correspond to the closest if statement.
+    Therefore value = 5 when it passes both tests,
+    value = 6 when it passes the first, but not the second
+    and value is unset if it doesnt pass the first one 
+    (the second test would not matter for this case)
+
+if (first == test1) 
+    if (second == test2) 
+	value = 5; 
+    else 
+	value = 6;
+
+we can add {} to get another interpretation:
+
+if (first == test1)
+    if (second == test2) 
+    {
+	value = 5; 
+    }
+else 
+    value = 6;
+
+The else will now correspond to the first if statement.
+    We get value = 5 if it passes both tests
+    And we get 6 otherwise.
+
+The flaw is that value will be unset if it doesnt pass the first test. 
+    This can be fixed by adding value = 7 (or any other number)
+    before or after
