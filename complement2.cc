@@ -10,20 +10,24 @@ int main(int argc, char *argv[])
     size_t const length = 8 * sizeof(number);
     string const binary = bitset<length>(number).to_string();
 
-    cout << number << " = " << binary  << " = ";		// prints first part of output
-
-    for(size_t idx = 0, first = 0; idx != length; ++idx)
+    cout << number << " = " << binary  << " = ";			// prints first part of output
+    if(number != 0)							// checks the special case number = 0
     {
-	if(binary[idx] == '1')					// checks if number has a 1 at pos idx
+	for(size_t idx = 0, first = 0; idx != length; ++idx)
 	{
-	    if(first == 0)					// checks if this will be the first number to print
+	    if(binary[idx] == '1')					// checks if number has a 1 at pos idx
 	    {
-		cout << (1 << (length - idx - 1));		// outputs the correct power of 2
-		++first;					// causes next positive to not go in this if statement
+		if(first == 0)						// checks if this will be the first number to print
+		{
+		    cout << (1 << (length - idx - 1));			// outputs the correct power of 2
+		    ++first;						// causes next positive to not go in this if statement
+		}
+		else
+		    cout << " + " << (1 << (length - idx -1));		// outputs + and the correct power of two
 	    }
-	    else
-	    cout << " + " << (1 << (length - idx -1));		// outputs + and the correct power of two
 	}
     }
+    else
+	cout << 0;							// if number = 0, print 0
     cout << '\n';
 }
