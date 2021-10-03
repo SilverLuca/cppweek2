@@ -4,34 +4,43 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    size_t radix = stoul(argv[1]);			// initialize first input as radix
-    size_t value = stoul(argv[2]);			// initialize second input as value
-    size_t idx = 0;					// initialize idx to loop back and forth
-    size_t digits[] = {};				// initialize digits array
+    //initialize: inputs, idx and digits array
+    size_t const radix = stoul(argv[1]);
+    size_t value = stoul(argv[2]);
+    size_t idx = 0;
+    size_t digits[] = {};
 
+    // prints first part of the sentence
     cout << value << ", displayed using radix "
-	<< radix << " is: ";				// prints the first part of the sentence
+	 << radix << " is: ";
 
-    while(value > radix)				// loops until no more new digits are needed
+    // loops until no more new digits are needed
+    while(value > radix)
     {
-	digits[idx] = value % radix;			// fills digits array with the remainder
-	value =  value / radix;				// getting ready for the next digit (floors the value)
-	++idx;						// increases index
+	// fill array with remainder
+	digits[idx] = value % radix;
+	// modify value for next digit (floors value)
+	value /= radix;
+	++idx;
     }
 
-    digits[idx] = value;				// fills the last required digit
+    // fills the last required digit
+    digits[idx] = value;
 
-    for (idx = idx+1; idx--;)				// loops back over the entries in the array
-        if(digits[idx] > 9)				// check if a number should convert to a letter
+    // loop backwards over the array
+    for (idx += 1; idx--;)
+    {
+	// check if number should convert to letter
+        if(digits[idx] > 9)
 	{
-	    int letter = digits[idx] + 87;		// ewww magic number
-	    cout << (char) letter;			// prints the letter
+	    // converts 10 --> a etc using ascii
+	    int letter = digits[idx] + 87;
+	    cout << (char) letter;
 	}
 	else
 	{
-            cout << digits[idx];			// prints the number
+            cout << digits[idx];
 	}
-
-    cout << '\n';					// ends the line
+    }
+    cout << '\n';
 }
-
