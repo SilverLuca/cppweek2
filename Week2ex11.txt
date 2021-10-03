@@ -13,10 +13,10 @@ if (first == test1)
 we can add {} to get another interpretation:
 
 if (first == test1)
-    if (second == test2) 
-    {
+{
+    if (second == test2)
 	value = 5; 
-    }
+}
 else 
     value = 6;
 
