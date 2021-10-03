@@ -4,22 +4,27 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    ++argv;							// increaments argv
+    ++argv;
+    // calculates the amount of lines neccesary
+    size_t const lines = (1 << (argc - 1));
 
-    size_t lines = (1 << (argc - 1));				// calculates the amount of lines neccesary
-
-    for(size_t idx = 0; idx != lines; ++idx)			// for loop of the lines
+    // loop over the lines
+    for(size_t idx = 0; idx != lines; ++idx)
     {
-	cout << idx + 1 << ":";					// prints "n:" for each line
+	// prints "n:" for each line
+	cout << idx + 1 << ":";
 
-	for(int bit = 0, digit = idx; bit != argc - 1; ++bit)	// for loop over binary digits
+	// loop over binary digits
+	for(int bit = 0, digit = idx; bit != argc - 1; ++bit)
 	{
-	    if(digit & 1)					// checks if the first bit is set
-	    {
-		cout << " " << argv[bit];			// prints the outputs according to the active bits
-	    }
-		digit >>= 1;					// shifts bits right to evaluate next bit
+	    // check if bit is set
+	    if(digit & 1)
+		// yes? print corresponding word
+		cout << " " << argv[bit];
+	    // go to next bit
+	    digit >>= 1;
 	}
-	cout << '\n';						// ends each line
+	// ends each line
+	cout << '\n';
     }
 }
