@@ -6,12 +6,16 @@ using namespace std;
 
 int main()
 {
-    string text;				// Initializes output string
+    // Initializes output string
+    string text;
 
-    for(int idx = 0; idx != 128; ++idx)		// loops throug all 128 ascii values
+    // loops throug all 256 ascii values
+    for(int idx = 0; idx != 256; ++idx)
     {
-	if(isalpha((char) idx) != 0)		// checks if idx corresponds to an alphabetic ascii value
-	    text = text + (char) idx;		// if yes, add that ascii character to the string
+	// check if idx in ascii is alphabetic
+	if(isalpha((char) idx) != 0)
+	    // if yes, add that ascii character to the string
+	    text += (char) idx;
     }
-    cout << text << '\n';			// outputs all alphabetic characters
+    cout << text << '\n';
 }
