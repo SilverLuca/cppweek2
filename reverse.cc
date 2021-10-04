@@ -9,7 +9,7 @@ int main()
     string text;
 
     // allows continuous input
-    while(true)
+    while (true)
     {
 	// prompts user to type
         cout << "? ";
@@ -19,11 +19,11 @@ int main()
         size_t const count = text.length();
 
 	// check for empty promt
-        if(count == 0)
+        if (count == 0)
             break;
 
 	// prints text in reverse
-	for(size_t idx = count ; idx--; )
+	for (size_t idx = count ; idx--; )
 	    cout << text.at(idx);
 
         cout << '\n';
