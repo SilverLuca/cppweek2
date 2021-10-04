@@ -4,6 +4,9 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    // avoid using magicNumbers
+    enum magicNumbers { largestDigit = 9, asciiValueCorrespondingtoa = 87};
+
     //initialize: inputs, idx and digits array
     size_t const radix = stoul(argv[1]);
     size_t value = stoul(argv[2]);
@@ -34,7 +37,7 @@ int main(int argc, char *argv[])
         if (digits[idx] > 9)
 	{
 	    // converts 10 --> a etc using ascii
-	    int letter = digits[idx] + 87;
+	    int letter = digits[idx] + asciiValueCorrespondingtoa;
 	    cout << (char) letter;
 	}
 	else
