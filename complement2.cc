@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 		}
 		else
 		    // outputs + and the correct power of 2
-		    cout << " + " << (1 << (length - idx -1));
+		    cout << " + " << (1 << (length - idx - 1));
 	    }
 	}
     }
