@@ -1,8 +1,15 @@
+Question 1:
+ describe in your own words how the compiler interprets this statement;
+
 The else will correspond to the closest if statement.
     Therefore value = 5 when it passes both tests,
     value = 6 when it passes the first, but not the second
     and value is unset if it doesnt pass the first one 
     (the second test would not matter for this case)
+
+Question 2:
+  rewrite this statement using the correct layout 
+  (no additional syntax elements may be used); 
 
 if (first == test1) 
     if (second == test2) 
@@ -10,19 +17,31 @@ if (first == test1)
     else 
 	value = 6;
 
+Question 3
+  instead of the interpretation as used by the compiler: 
+  how would you change the statement so that the 
+  'non-default' interpretation is used? 
+
 we can add {} to get another interpretation:
 
 if (first == test1)
-{
-    if (second == test2)
+    if (second == test2) 
+    {
 	value = 5; 
-}
+    }
 else 
     value = 6;
+
+Question 4
+  describe in your own words how your changed statement is interpreted 
 
 The else will now correspond to the first if statement.
     We get value = 5 if it passes both tests
     And we get 6 otherwise.
+
+Question 5
+  there is a flaw in the way the original statement was formulated 
+  which is unrelated to its layout. What is the flaw and how to fix it? 
 
 The flaw is that value will be unset if it doesnt pass the first test. 
     This can be fixed by adding value = 7 (or any other number)
