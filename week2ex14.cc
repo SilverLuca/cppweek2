@@ -9,16 +9,16 @@ int main(int argc, char *argv[])
     size_t const lines = (1 << (argc - 1));
 
     // loop over the lines
-    for(size_t idx = 0; idx != lines; ++idx)
+    for (size_t idx = 0; idx != lines; ++idx)
     {
 	// prints "n:" for each line
 	cout << idx + 1 << ":";
 
 	// loop over binary digits
-	for(int bit = 0, digit = idx; bit != argc - 1; ++bit)
+	for (int bit = 0, digit = idx; bit != argc - 1; ++bit)
 	{
 	    // check if bit is set
-	    if(digit & 1)
+	    if (digit & 1)
 		// yes? print corresponding word
 		cout << " " << argv[bit];
 	    // go to next bit
