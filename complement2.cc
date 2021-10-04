@@ -15,15 +15,15 @@ int main(int argc, char *argv[])
     cout << number << " = " << binary  << " = ";
 
     // checks special case number = 0
-    if(number != 0)
+    if (number != 0)
     {
-	for(size_t idx = 0, first = 0; idx != length; ++idx)
+	for (size_t idx = 0, first = 0; idx != length; ++idx)
 	{
 	    // checks if number has a 1 at pos idx (in binary)
-	    if(binary[idx] == '1')
+	    if (binary[idx] == '1')
 	    {
 		// check if this is the first number to print
-		if(first == 0)
+		if (first == 0)
 		{
 		    // output correct power of 2
 		    cout << (1 << (length - idx - 1));
