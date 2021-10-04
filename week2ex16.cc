@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     digits[idx] = value;
 
     // loop backwards over the array
-    for (idx += 1; idx--;)
+    for (idx += 1; idx--; )
     {
 	// check if number should convert to letter
         if (digits[idx] > 9)
