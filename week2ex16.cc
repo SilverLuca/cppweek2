@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	 << radix << " is: ";
 
     // loops until no more new digits are needed
-    while(value > radix)
+    while (value > radix)
     {
 	// fill array with remainder
 	digits[idx] = value % radix;
@@ -31,16 +31,14 @@ int main(int argc, char *argv[])
     for (idx += 1; idx--;)
     {
 	// check if number should convert to letter
-        if(digits[idx] > 9)
+        if (digits[idx] > 9)
 	{
 	    // converts 10 --> a etc using ascii
 	    int letter = digits[idx] + 87;
 	    cout << (char) letter;
 	}
 	else
-	{
             cout << digits[idx];
-	}
     }
     cout << '\n';
 }
